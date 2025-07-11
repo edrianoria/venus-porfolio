@@ -1,0 +1,435 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #393E46 !important;
+}
+
+.navbar {
+    background: #adebb3;
+    font-size: 1.1rem !important;
+}
+
+.navbar .navbar-brand {
+    width: 75px;
+    height: auto;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #222831 !important;
+}
+
+.navbar .navbar-nav .contact-btn {
+    background: #393E46;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.navbar .navbar-nav .contact-btn:hover {
+    background: #222831;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.navbar .navbar-nav .contact-btn i {
+    color: white !important;
+}
+
+#home {
+    height: 100%;
+}
+
+.home-content h1 {
+    font-size: calc(2.5rem + 2vw);
+}
+
+.home-content .home-description {
+    font-family: 'Lato', sans-serif;
+}
+
+.venus-image {
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+}
+
+.search-logo {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: auto;
+    animation: zoomIn 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.circle-1 {
+    position: absolute;
+    top: 55%;
+    left: 7.5%;
+    width: 25%;
+    height: auto;
+    animation: zoomIn 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.circle-2 {
+    position: absolute;
+    top: 20%;
+    right: 7.5%;
+    width: 30%;
+    height: auto;
+    animation: zoomIn 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.mint-green-text {
+    color: #58855C !important;
+}
+
+.btn-mint-green {
+    color: white !important;
+    border: none;
+    background: linear-gradient(to right, #58855C, #3E5F41, #253C27);
+    background-size: 200% 125%;
+    background-position: left center;
+    padding: 10px 40px;
+    transition: background-position 0.5s ease-in-out;
+    text-decoration: none;
+    width: fit-content;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: calc(1.1rem + 0.25vw);
+    letter-spacing: 2px;
+}
+
+.btn-mint-green i {
+    color: white !important;
+}
+
+.btn-mint-green:hover {
+    background-position: right center;
+    color: white !important;
+}
+
+.btn-mint-green:hover i {
+    color: white !important;
+}
+
+.companies-content h2 {
+    font-size: calc(2rem + 1vw);
+    margin-bottom: 1rem;
+}
+
+.companies-container {
+    width: 310px;
+    overflow: hidden;
+    position: relative;
+}
+
+.companies-container::before,
+.companies-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.companies-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.companies-container::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.companies-container .companies-container-track {
+    animation: slide 13s linear infinite;
+}
+
+.companies-content .companies-container .company-logo-item {
+    min-width: 250px;
+    height: auto;
+}
+
+.companies-content .companies-container .company-logo-item img {
+    width: 100%;
+    height: auto;
+}
+
+.services-content h2 {
+    font-size: calc(2rem + 1vw);
+    margin-bottom: 1rem;
+}
+
+.services .service-item {
+    background: #adebb3;
+    width: 30vw;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.outcomes-content {
+    background: #393E46;
+}
+
+.outcomes-content h2 {
+    font-size: calc(2rem + 1vw);
+    margin-bottom: 1rem;
+    color: white !important;
+}
+
+.outcomes-content h3 {
+    font-size: calc(1.5rem + 1vw);
+    margin-bottom: 1rem;
+    color: white !important;
+}
+
+.outcomes-content .outcome-item {
+    background: white;
+    border-radius: 5px;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+}
+
+.outcomes-content .outcome-item i {
+    padding-top: .360rem;
+}
+
+.outcomes-content .outcome-item .fa-circle-exclamation {
+    color: #e93d3d !important;
+}
+
+.outcomes-content .outcome-item .fa-circle-check {
+    color: #58855C !important;
+}
+
+.outcomes-content .outcome-item p {
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+}
+
+.latest-projects h2 {
+    font-size: calc(1.5rem + 1vw);
+    color: #58855C !important;
+    border-bottom: 2px solid #393E46;
+}
+
+.latest-projects .see-all {
+    font-size: calc(1.1rem + 0.5vw);
+}
+
+.latest-projects .projects .card {
+    min-width: 300px !important;
+    position: relative;
+}
+
+.projects .card .card-body {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, #58855C);
+    opacity: 0;
+    overflow: hidden;
+}
+
+.projects .card:hover {
+    transform: scale(1.05);
+    transition: transform .25s ease-in-out;
+}
+
+.projects .card:hover .card-body {
+    opacity: 1;
+    transition: .5s ease-in-out;
+}
+
+.projects .card .card-body p {
+    font-family: 'Lato', sans-serif;
+    text-align: justify;
+}
+
+.tools-used h2 {
+    font-size: calc(1.5rem + 1vw);
+    color: #58855C !important;
+    border-bottom: 2px solid #393E46;
+}
+
+.tools-used .see-all {
+    font-size: calc(1.1rem + 0.5vw);
+}
+
+.tools-used .tools .card {
+    animation: shake 1.50s ease-in-out infinite;
+}
+
+.tools-used .tools .card .card-body {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, #58855C);
+    opacity: 0;
+    overflow: hidden;
+}
+
+.tools-used .tools .card:hover {
+    transform: scale(1.05);
+    transition: transform .25s ease-in-out;
+}
+
+.tools-used .tools .card:hover .card-body {
+    opacity: 1;
+    transition: .5s ease-in-out;
+}
+
+.client-reviews {
+    background: #393E46;
+}
+
+.client-reviews h2 {
+    font-size: calc(1.5rem + 1vw);
+    color: white !important;
+}
+
+.client-reviews .reviews .review-item {
+    width: 20rem;
+}
+
+.reviews .review-item p {
+    color: white !important;
+    font-family: 'Latos', sans-serif;
+}
+
+.reviews .review-item .review-client-image {
+    width: 150px;
+    height: auto;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px #222831;
+}
+
+.reviews .review-item .review-client-image img {
+    width: 100%;
+    height: auto;
+}
+
+.review-item .review-body .comment p, .review-item .review-body .client-company p {
+    color: #adebb3 !important;
+}
+
+.review-item .review-body .client-company p {
+    font-style: italic;
+}
+
+.review-item .review-body .statement {
+    text-align: justify;
+}
+
+.review-item .review-body .review-rating i {
+    color: #adebb3 !important;
+}
+
+.footer {
+    background: #adebb3;
+    min-height: 50vh;
+}
+
+.footer .footer-section-1 .footer-brand {
+    width: 150px;
+    height: auto;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+
+
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+    }
+    10%{
+        transform: translateX(50%);
+    }
+    20% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-50%);
+    }
+    40% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-150%);
+    }
+    60% {
+        transform: translateX(-200%);
+    }
+    70% {
+        transform: translateX(-250%);
+    }
+    80% {
+        transform: translateX(-300%);
+    }
+    90% {
+        transform: translateX(-350%);
+    }
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+@media (min-width: 768px) {
+   .home-description {
+    text-align: justify;
+   }
+}
+
+@media (max-width: 991px) {
+    .contact-btn {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .services .service-item {
+        width: 100%;
+    }
+}
