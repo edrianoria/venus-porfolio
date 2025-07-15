@@ -5,37 +5,37 @@
 {% block content %}
 <nav class="navbar navbar-expand-lg ps-lg-5 pe-lg-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Build Automate Logo" class="img-fluid"></a>
+    <a class="navbar-brand" href="{{url_for('index')}}"><img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Build Automate Logo" class="img-fluid"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About Me</a>
+          <a class="nav-link" href="{{url_for('about_me')}}">About Me</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Works
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="{{url_for('landing_pages')}}">Landing Pages</a></li>
+            <li><a class="dropdown-item" href="{{url_for('workflows')}}">Workflows & Automations</a></li>
+            <li><a class="dropdown-item" href="{{url_for('graphic_designs')}}">Graphic Designs</a></li>
+            <li><a class="dropdown-item" href="{{url_for('tools_used')}}">Tools</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="{{url_for('services')}}">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Testimonial Videos</a>
+          <a class="nav-link" href="{{url_for('testimonials')}}">Testimonial Videos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link contact-btn ps-2 pe-2 ps-lg-3 pe-lg-3" href="#">Contact <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            <a class="nav-link contact-btn ps-2 pe-2 ps-lg-3 pe-lg-3 open-contact-modal">Contact <i class="fa-solid fa-circle-arrow-right ps-2"></i></a>
         </li>
       </ul>
     </div>
@@ -126,7 +126,7 @@
               </div>
             </div>
             <div class="mt-5">
-              <button class="btn-mint-green">Yes I need help! Book a call now</button>
+              <button class="btn-mint-green open-contact-modal">Yes I need help! Book a call now</button>
             </div>
         </div>
     </div>
@@ -192,7 +192,7 @@
             </div>
             <div class="d-flex flex-column align-items-center gap-3 mt-5">
               <h3 class="text-white">Don't worry, I got you covered</h3>
-              <button class="btn-mint-green">Let's connect</button>
+              <button class="btn-mint-green open-contact-modal">Let's connect</button>
             </div>
         </div>
     </div>
@@ -281,7 +281,7 @@
 
     <!-- Client Reviews -->
     <div class="row client-reviews mt-5 p-2 pt-5 pb-5">
-      <div class="col-12 d-flex flex-column align-items-center text-center h-100">
+      <div class="col-12 d-flex flex-column align-items-center gap-3 text-center h-100">
         <h2 class="mint-green-text">What my clients are saying</h2>
         <div class="reviews d-flex justify-content-around gap-5 flex-wrap w-75">
               <div class="review-item d-flex flex-column align-items-center gap-4">
@@ -392,8 +392,152 @@
                   </div>
                 </div>
         </div>
+
+        <button class="btn-mint-green mt-5">
+          Watch video testimonials <i class="fa-solid fa-video ps-2"></i>
+        </button>
       </div>
     </div>
+
+    <!-- FAQ -->
+    <div class="row frequently-asked-questions mt-5 pt-5 pb-5 p-3">
+      <div class="col-12 d-flex flex-column align-items-center text-center h-100">
+        <h2 class="mint-green-text">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="accordion w-75 d-flex flex-column gap-3" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  What services do you offer?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseOne">
+                  Accordion Item #4
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
+                  Accordion Item #5
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseOne">
+                  Accordion Item #6
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseOne">
+                  Accordion Item #7
+                </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-mint-green mt-5 open-contact-modal">
+            Let's get started - book a call
+          </button>
+
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="row contact mt-5 p-3 p-md-5">
+      <div class="col-12 d-flex flex-column align-items-center flex-md-row gap-3">
+        <div class="contact-section-1 flex-fill w-50">
+          <h2 class="w-100">Now that you know about me, let’s focus on you!</h2>
+        </div>
+        <div class="contact-section-2 flex-fill w-50">
+          <div class="form-group d-flex flex-column gap-3">
+            <input type="text" name="" id="" class="form-control" placeholder="First Name">
+            <input type="text" name="" id="" class="form-control" placeholder="Last Name">
+            <hr class="horizontal-line">
+            <input type="email" name="" id="" class="form-control" placeholder="Email">
+            <div class="form-group d-flex align-items-start gap-2">
+              <input type="checkbox" class="from-check-input mt-1" name="" id="">
+              <p class="mb-0">By providing your number, you consent to receive SMS notifications, alerts, and occasional marketing messages from GoHighWithAldren.com. Message frequency varies. Standard message and data rates may apply. Reply STOP to unsubscribe anytime.</p>
+            </div>
+            <button class="btn-mint-green w-100 open-contact-modal">
+              Let's connect
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <dialog class="modal-container p-3 p-lg-5" id="contact-modal">
+      <div class="d-flex flex-column align-items-center gap-3">
+          <div class="d-flex justify-content-end w-100">
+            <i class="fa fa-xmark" id="close-contact-modal"></i>
+          </div>
+          <h3 class="text-center">Leave your GoHighLevel problems to me.</h3>
+
+          <input type="text" name="" id="" class="form-control" placeholder="First Name">
+          <input type="text" name="" id="" class="form-control" placeholder="Last Name">
+          <input type="email" name="" id="" class="form-control" placeholder="Email">
+          <button class="btn-mint-green w-100 mt-3">Lets Connect</button>
+          </div>
+    </dialog>
 </main>
 
 <footer class="footer d-flex flex-column flex-md-row gap-5 align-items-md-stretch ps-lg-5 pe-lg-5 p-5 w-100">
@@ -406,11 +550,11 @@
   <div class="footer-section-2 d-flex flex-column h-100 w-100">
     <h3>Navigation</h3>
     <ul class="footer-links d-flex flex-column gap-3 justify-content-center list-unstyled mb-0 ps-2">
-      <li><a class="nav-link" href="#">Home</a></li>
-      <li><a class="nav-link" href="#">About Me</a></li>
+      <li><a class="nav-link" href="{{url_for('index')}}">Home</a></li>
+      <li><a class="nav-link" href="{{url_for('about_me')}}">About Me</a></li>
       <li><a class="nav-link" href="#">Works</a></li>
-      <li><a class="nav-link" href="#">Services</a></li>
-      <li><a class="nav-link" href="#">Testimonial Videos</a></li>
+      <li><a class="nav-link" href="{{url_for('services')}}">Services</a></li>
+      <li><a class="nav-link" href="{{url_for('testimonials')}}">Testimonial Videos</a></li>
       <li><a class="nav-link" href="#">Contact</a></li>
     </ul>
   </div>
@@ -426,10 +570,27 @@
 </footer>
 
 <script type="text/javascript">
-    const yearContainer = document.getElementById('year');
+    document.addEventListener('DOMContentLoaded', function() {
+      const yearContainer = document.getElementById('year');
 
-    const currentYear = new Date().getFullYear();
+      const currentYear = new Date().getFullYear();
 
-    yearContainer.textContent = currentYear;
+      yearContainer.textContent = currentYear;
+
+      const contactModal = document.getElementById('contact-modal');
+      const closeContactModalBtn = document.getElementById('close-contact-modal');
+      const openContactModalBtn = document.querySelectorAll('.open-contact-modal');
+
+      openContactModalBtn.forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          contactModal.showModal();
+        });
+      });
+
+      closeContactModalBtn.addEventListener('click', function() {
+        contactModal.close();
+      });
+    });
 </script>
 {% endblock %}
