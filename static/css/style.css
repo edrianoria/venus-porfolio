@@ -161,6 +161,14 @@
     animation: slideToLeft 30s linear infinite;
 }
 
+.companies-content .companies-container.reverse .company-logo-item {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    left: -250px;
+    animation: slideToRight 30s linear infinite;
+}
+
 .companies-container .company-logo-item:nth-child(1) {
     animation-delay: calc(30s / 5 * (5 - 1) * -1);
 }
@@ -181,6 +189,27 @@
     animation-delay: calc(30s / 5 * (5 - 5) * -1);
 }
 
+/* Reverse slide*/
+.companies-container.reverse .company-logo-item:nth-child(1) {
+    animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+
+.companies-container.reverse .company-logo-item:nth-child(2) {
+    animation-delay: calc(30s / 5 * (5 - 2) * -1);
+}
+
+.companies-container.reverse .company-logo-item:nth-child(3) {
+    animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+
+.companies-container.reverse .company-logo-item:nth-child(4) {
+    animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+
+.companies-container.reverse .company-logo-item:nth-child(5) {
+    animation-delay: calc(30s / 5 * (5 - 5) * -1);
+}
+
 .services-content h2 {
     font-size: calc(2rem + 1vw);
     margin-bottom: 1rem;
@@ -195,6 +224,10 @@
     font-family: 'Lato', sans-serif;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    animation: fade-in-out linear forwards;
+    animation-timeline: view();
+    animation-range: 0 125%;
 }
 
 .outcomes-content {
@@ -211,6 +244,18 @@
     font-size: calc(1.5rem + 1vw);
     margin-bottom: 1rem;
     color: white !important;
+}
+
+.outcomes-content .outcome-container:nth-child(odd) {
+    animation: slideFromLeftToRight linear forwards;
+    animation-timeline: view();
+    animation-range: -10% 100%;
+}
+
+.outcomes-content .outcome-container:nth-child(even) {
+    animation: slideFromRightToLeft linear forwards;
+    animation-timeline: view();
+    animation-range: -10% 100%;
 }
 
 .outcomes-content .outcome-item {
@@ -325,6 +370,9 @@
 
 .client-reviews .reviews .review-item {
     width: 20rem;
+    animation: fade-in-out linear forwards;
+    animation-timeline: view();
+    animation-range: 0 125%;
 }
 
 .reviews .review-item p {
@@ -625,6 +673,30 @@
     font-family: 'Latos', sans-serif;
 }
 
+.testimonials h2 {
+    font-size: calc(2rem + 1vw);
+}
+
+.testimonials .testimonial-item .testimonial-title p {
+    font-size: calc(1.2rem + 0.75vw);
+    font-weight: 600;
+}
+
+.testimonials .testimonial-item .testimonial-sub-title p {
+    font-size: calc(1rem + 0.50vw);
+    font-weight: 500;
+}
+
+.testimonials .testimonial-item .testimonial-transcript p {
+    font-family: 'Latos', sans-serif;
+}
+
+.testimonials .testimonial-item .testimonial-section-2 video {
+    width: 100%;
+    height: auto;
+    min-width: 300px;
+}
+
 .modal-container {
     width: 50%;
     top: 50%;
@@ -673,6 +745,44 @@
     height: auto;
 }
 
+@keyframes slideFromLeftToRight {
+    0%{
+        transform: translateX(-328px);
+        opacity: 0;
+    }
+    30% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-328px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideFromRightToLeft {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    30% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
 @keyframes slideDown {
     from {
         top: 35%;
@@ -680,6 +790,25 @@
 
     to {
         top: 50%;
+    }
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    30% {
+        opacity: 1;
+        scale: 1;
+    }
+    70% {
+        opacity: 1;
+        scale: 1;
+    }
+    100% {
+        opacity: 0;
+        scale: 0;
     }
 }
 
@@ -715,6 +844,12 @@
 @keyframes slideToLeft {
     to {
         left: -250px;
+    }
+}
+
+@keyframes slideToRight {
+    to {
+        left: 100%;
     }
 }
 
